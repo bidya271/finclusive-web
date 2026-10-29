@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, CheckCircle2, Shield, Lock, Send } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Shield, Lock, Send, Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
 
 export function ContactSection() {
@@ -11,7 +11,7 @@ export function ContactSection() {
     email: "",
     company: "",
     jurisdiction: "EU",
-    timeline: "Immediate (<30 Days)",
+    interest: "Design Partner / Early Pilot",
     requirements: ""
   });
 
@@ -36,15 +36,14 @@ export function ContactSection() {
           <div className="lg:col-span-5">
             <div className="flex items-center space-x-2 font-mono-tag text-[12px] text-[#068241] font-bold uppercase tracking-wider mb-2">
               <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-              <span>[05 // FOUNDING COHORT INTAKE]</span>
+              <span>[05 // DESIGN PARTNERSHIP INTAKE]</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211] leading-tight">
-              Direct access to our founding infrastructure team.
+              Collaborate directly with our engineering team.
             </h2>
             
             <p className="mt-4 text-[15px] text-[#55534E] leading-relaxed">
-              We work closely with a selective first cohort of founding fintech builders. Speak directly with the engineers 
-              architecting the virtual ledger and AI compliance engine.
+              We are actively developing the platform and seeking fintech founders, digital wallet operators, and cross-border teams to shape the API specifications and early sandbox releases.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -53,7 +52,7 @@ export function ContactSection() {
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-[#121211]">
-                  <strong>Pilot Sandbox Access:</strong> Issued to approved founding teams within 24 hours.
+                  <strong>Early Sandbox Access:</strong> Priority access to prototype APIs and documentation as they are released.
                 </div>
               </div>
 
@@ -62,7 +61,7 @@ export function ContactSection() {
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-[#121211]">
-                  <strong>Hands-on Architecture Support:</strong> Shared Slack/Discord channel with our core engineers.
+                  <strong>Corridor Alignment:</strong> Help us prioritize the payment corridors and local clearing rails your business needs.
                 </div>
               </div>
 
@@ -71,14 +70,14 @@ export function ContactSection() {
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-[#121211]">
-                  <strong>Sponsor Bank Readiness:</strong> Clear documentation package for partner bank approval.
+                  <strong>Direct Engineering Channel:</strong> Regular feedback loops with the architects building the system.
                 </div>
               </div>
             </div>
 
             {/* Direct Office Address & Trust */}
             <div className="mt-10 p-4 bg-[#FAF8F5] border border-[#DCD8CF] font-mono-tag text-[12px] text-[#55534E]">
-              <div className="text-[#121211] font-bold mb-1">FINCLUSIVE.SI // FOUNDING ENTITY</div>
+              <div className="text-[#121211] font-bold mb-1">FINCLUSIVE.SI // ENGINEERING LABS</div>
               <div>Finclusive Tech d.o.o. / Finclusive Tech Pvt. Ltd.</div>
               <div className="text-[#8E8B82] mt-1">Ljubljana, Slovenia &bull; Global Operations</div>
               <div className="text-[#068241] mt-2 font-bold flex items-center space-x-1.5">
@@ -98,17 +97,16 @@ export function ContactSection() {
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <h3 className="font-serif-display text-3xl font-normal text-[#121211]">
-                    Pilot Application Received.
+                    Thank You for Reaching Out.
                   </h3>
                   <p className="mt-3 text-[14.5px] text-[#55534E] max-w-md mx-auto">
-                    Our founding engineering team will review your requirements. 
-                    Expect sandbox keys and API documentation at <strong className="text-[#121211]">{formData.email}</strong> within 24 hours.
+                    We have received your note. A member of our engineering team will follow up directly at <strong className="text-[#121211]">{formData.email}</strong> to schedule an architecture conversation.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 font-mono-tag text-[12px] text-[#068241] underline font-bold"
                   >
-                    Submit another query
+                    Submit another message
                   </button>
                 </div>
               ) : (
@@ -135,7 +133,7 @@ export function ContactSection() {
                       <input
                         type="email"
                         required
-                        placeholder="maya@startup.com"
+                        placeholder="maya@organization.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
@@ -146,12 +144,12 @@ export function ContactSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[13px] font-semibold text-[#121211] mb-1">
-                        Company / Startup Name *
+                        Company or Project *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="e.g. NeoWallet / GlobalPay"
+                        placeholder="e.g. NextPay / Remit Labs"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
@@ -160,28 +158,28 @@ export function ContactSection() {
 
                     <div>
                       <label className="block text-[13px] font-semibold text-[#121211] mb-1">
-                        Target Pilot Corridor
+                        Primary Corridor Interest
                       </label>
                       <select
                         value={formData.jurisdiction}
                         onChange={(e) => setFormData({ ...formData, jurisdiction: e.target.value })}
                         className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
                       >
-                        <option value="EU">European Union (SEPA / Virtual IBANs)</option>
+                        <option value="EU">European Union (SEPA Instant / Virtual IBANs)</option>
                         <option value="UK">United Kingdom (Faster Payments)</option>
-                        <option value="US">North America (ACH / FedNow)</option>
-                        <option value="CROSS">Cross-Border Remittance Corridor</option>
+                        <option value="US">North America</option>
+                        <option value="CROSS">Cross-Border Remittances (Europe &rarr; Global)</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-[13px] font-semibold text-[#121211] mb-1">
-                      What are you looking to build?
+                      What are you building or exploring?
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Briefly describe your use case: e.g. Virtual accounts for B2B payouts, cross-border remittance app, automated AI sanction screening..."
+                      placeholder="Share your goals: e.g. Cross-border remittance integration, programmable virtual accounts, automated sanction screening..."
                       value={formData.requirements}
                       onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
                       className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
@@ -194,13 +192,13 @@ export function ContactSection() {
                       className="brutalist-button-green w-full inline-flex items-center justify-center space-x-2 py-3.5 text-white font-bold text-[15px]"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Submit Pilot Application</span>
+                      <span>Start an Architecture Conversation</span>
                     </button>
                   </div>
 
                   <div className="flex items-center justify-center space-x-2 text-[11px] font-mono-tag text-[#8E8B82] pt-2">
                     <Lock className="w-3 h-3 text-[#068241]" />
-                    <span>MUTUAL NDA &bull; 256-BIT ENCRYPTED &bull; STRICT CONFIDENTIALITY</span>
+                    <span>MUTUAL NDA &bull; 256-BIT ENCRYPTION &bull; STRICT CONFIDENTIALITY</span>
                   </div>
                 </form>
               )}

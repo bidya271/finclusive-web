@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, CheckCircle2, Globe, Shield, Activity, Zap } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Globe, Shield, Activity, Sparkles, Compass } from "lucide-react";
 
 export function RemitPeCaseStudy() {
   return (
@@ -13,12 +13,12 @@ export function RemitPeCaseStudy() {
             <div className="flex items-center space-x-3">
               <span className="w-4 h-4 bg-[#068241] border border-[#121211] inline-block shadow-[1px_1px_0px_#121211]"></span>
               <span className="font-mono-tag text-[13px] font-bold text-[#068241] uppercase tracking-wider">
-                FLAGSHIP REFERENCE // POWERED BY REMITPE RAILS
+                STRATEGIC VISION // POWERED IN PARTNERSHIP WITH REMITPE
               </span>
             </div>
             
             <span className="font-mono-tag text-[11px] bg-white px-2.5 py-1 border-[1.5px] border-[#068241] text-[#068241] font-bold shadow-[2px_2px_0px_#068241]">
-              PRODUCTION RAIL PARTNER
+              CORRIDOR PARTNER
             </span>
           </div>
 
@@ -27,60 +27,61 @@ export function RemitPeCaseStudy() {
             
             <div className="lg:col-span-7">
               <h3 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211] leading-tight">
-                Built on proven payment rails tested with RemitPe.
+                Architecting the rails RemitPe envisions for borderless money movement.
               </h3>
               
               <p className="mt-4 text-[15px] text-[#55534E] leading-relaxed">
-                Rather than inventing unproven payment pipes from scratch, Finclusive leverages the high-reliability cross-border 
-                infrastructure engineered for RemitPe, offering founding teams immediate access to instant settlement pipelines.
+                RemitPe is on a mission to eliminate excessive fees, sluggish intermediary bank delays, and friction for global migrants. 
+                Finclusive is being engineered as the underlying technical engine—unifying multi-currency virtual ledgers, AI compliance, 
+                and direct corridor connections so money reaches families instantly.
               </p>
 
-              {/* Comparison Matrix: Old vs Finclusive */}
+              {/* Comparison Matrix: What we want to replace vs what we are building */}
               <div className="mt-6 space-y-3">
-                <div className="p-3 bg-white border border-[#121211] flex items-start space-x-3">
+                <div className="p-3.5 bg-white border border-[#121211] flex items-start space-x-3">
                   <span className="font-mono-tag text-[11px] font-bold text-[#D97706] bg-[#FEF3C7] px-2 py-0.5 border border-[#FDE68A] shrink-0">
-                    TRADITIONAL BAAS
+                    THE LEGACY FRICTION
                   </span>
                   <div className="text-[13px] text-[#55534E]">
-                    <strong className="text-[#121211]">6–9 Months Setup:</strong> Enterprise RFPs, minimum commitment fees, complex multi-vendor compliance integrations.
+                    <strong className="text-[#121211]">Fragmented Banking &amp; Hidden Markups:</strong> Multi-day settlement hops across correspondent banks, opaque foreign exchange fees, and cumbersome manual AML checks.
                   </div>
                 </div>
 
-                <div className="p-3 bg-white border-[1.5px] border-[#068241] shadow-[2px_2px_0px_#068241] flex items-start space-x-3">
+                <div className="p-3.5 bg-white border-[1.5px] border-[#068241] shadow-[2px_2px_0px_#068241] flex items-start space-x-3">
                   <span className="font-mono-tag text-[11px] font-bold text-white bg-[#068241] px-2 py-0.5 border border-[#121211] shrink-0">
-                    FINCLUSIVE PILOT
+                    THE REMITPE OBJECTIVE
                   </span>
                   <div className="text-[13px] text-[#121211]">
-                    <strong className="text-[#068241]">Sprint Onboarding:</strong> Direct sandbox keys, pre-configured sponsor bank escrow, automated AI compliance workflows.
+                    <strong className="text-[#068241]">Instant, Fair, and Sovereign:</strong> Real-time clearing over SEPA Instant, Faster Payments, Pix &amp; UPI, paired with intelligent compliance and zero predatory margins.
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Metrics column */}
+            {/* Aspirational Focus Cards */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               <div className="bg-white p-5 border-[1.5px] border-[#121211] shadow-[3px_3px_0px_#068241]">
-                <div className="font-mono-tag text-[10.5px] text-[#068241] uppercase font-bold">KEY CORRIDORS</div>
-                <div className="font-serif-display text-4xl font-normal text-[#068241] mt-1">EU &amp; UK</div>
-                <div className="text-[12px] text-[#55534E] mt-1 font-medium">SEPA Instant &amp; Faster Payments</div>
+                <div className="font-mono-tag text-[10.5px] text-[#068241] uppercase font-bold">PRIMARY CORRIDORS</div>
+                <div className="font-serif-display text-2xl sm:text-3xl font-normal text-[#068241] mt-1">EU, UK &amp; Global</div>
+                <div className="text-[12px] text-[#55534E] mt-2 font-medium">Connecting major migrant routes</div>
               </div>
 
               <div className="bg-white p-5 border-[1.5px] border-[#121211] shadow-[3px_3px_0px_#068241]">
-                <div className="font-mono-tag text-[10.5px] text-[#068241] uppercase font-bold">AML SCREENING</div>
-                <div className="font-serif-display text-4xl font-normal text-[#068241] mt-1">&lt;85ms</div>
-                <div className="text-[12px] text-[#55534E] mt-1 font-medium">Sub-second risk scoring</div>
+                <div className="font-mono-tag text-[10.5px] text-[#068241] uppercase font-bold">AML ARCHITECTURE</div>
+                <div className="font-serif-display text-2xl sm:text-3xl font-normal text-[#068241] mt-1">Autonomous</div>
+                <div className="text-[12px] text-[#55534E] mt-2 font-medium">Sub-second AI sanction screening</div>
               </div>
 
-              <div className="bg-white p-5 border-[1.5px] border-[#121211] shadow-[3px_3px_0px_#121211]">
-                <div className="font-mono-tag text-[10.5px] text-[#8E8B82] uppercase">SETTLEMENT</div>
-                <div className="font-serif-display text-4xl font-normal text-[#121211] mt-1">Sub-1s</div>
-                <div className="text-[12px] text-[#55534E] mt-1 font-medium">Atomic ledger finality</div>
+              <div className="bg-white p-5 border-[1.5px] border-[#121211] shadow-[3px_3px_0px_#068241]">
+                <div className="font-mono-tag text-[10.5px] text-[#8E8B82] uppercase">SETTLEMENT GOAL</div>
+                <div className="font-serif-display text-2xl sm:text-3xl font-normal text-[#121211] mt-1">Instant</div>
+                <div className="text-[12px] text-[#55534E] mt-2 font-medium">Atomic ledger finality</div>
               </div>
 
-              <div className="bg-white p-5 border-[1.5px] border-[#121211] shadow-[3px_3px_0px_#121211]">
-                <div className="font-mono-tag text-[10.5px] text-[#8E8B82] uppercase">TARGET UPTIME</div>
-                <div className="font-serif-display text-4xl font-normal text-[#121211] mt-1">99.9%</div>
-                <div className="text-[12px] text-[#55534E] mt-1 font-medium">Production SLA guarantee</div>
+              <div className="bg-white p-5 border-[1.5px] border-[#121211] shadow-[3px_3px_0px_#068241]">
+                <div className="font-mono-tag text-[10.5px] text-[#8E8B82] uppercase">INFRASTRUCTURE</div>
+                <div className="font-serif-display text-2xl sm:text-3xl font-normal text-[#121211] mt-1">BaaS Native</div>
+                <div className="text-[12px] text-[#55534E] mt-2 font-medium">Built for developer agility</div>
               </div>
             </div>
 
@@ -89,7 +90,7 @@ export function RemitPeCaseStudy() {
           {/* External link CTA */}
           <div className="mt-8 pt-6 border-t border-[#8CE0B0] flex flex-wrap items-center justify-between gap-4">
             <div className="text-[13.5px] text-[#55534E]">
-              Explore the consumer remittance product built on these rails:
+              Explore the front-facing RemitPe product vision in development:
             </div>
             <a
               href="https://wl.remitpe.com"

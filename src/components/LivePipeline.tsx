@@ -9,38 +9,34 @@ export function LivePipeline() {
   const steps = [
     {
       id: "01",
-      name: "Pilot KYB & Entity Ingestion",
-      sub: "Dynamic IBAN & Sanction Screening",
-      metric: "45ms",
-      status: "VERIFIED"
+      name: "Smart Identity & KYB Routing",
+      sub: "Dynamic Virtual IBAN Provisioning",
+      status: "DESIGN SPEC"
     },
     {
       id: "02",
-      name: "Agentic Risk Engine",
-      sub: "Graph Neural Network & AML Shield",
-      metric: "85ms",
-      status: "CLEARED"
+      name: "Agentic Compliance Shield",
+      sub: "Automated Sanction Disambiguation",
+      status: "AI PROTOTYPE"
     },
     {
       id: "03",
-      name: "RemitPe FX Corridor Pool",
-      sub: "Atomic Spread Matching & Routing",
-      metric: "120ms",
-      status: "OPTIMIZED"
+      name: "RemitPe Liquidity Corridors",
+      sub: "Frictionless FX Corridor Routing",
+      status: "RAIL MAPPING"
     },
     {
       id: "04",
-      name: "Deterministic Ledger Commit",
-      sub: "Double-Entry Balance State Finalized",
-      metric: "22ms",
-      status: "SETTLED"
+      name: "Atomic Ledger Finality",
+      sub: "Double-Entry Balance Reconciliation",
+      status: "CORE ARCHITECTURE"
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 2400);
+    }, 2800);
     return () => clearInterval(timer);
   }, [steps.length]);
 
@@ -51,15 +47,15 @@ export function LivePipeline() {
         <div className="flex items-center space-x-2.5">
           <span className="w-3.5 h-3.5 bg-[#068241] border border-[#121211] shadow-[1px_1px_0px_#121211]"></span>
           <span className="font-mono-tag text-[12px] uppercase tracking-wider font-bold text-[#068241]">
-            LIVE ATOMIC SETTLEMENT PIPELINE
+            TARGET ARCHITECTURE // ATOMIC TRANSACTION FLOW
           </span>
           <span className="hidden sm:inline font-mono-tag text-[10.5px] bg-[#E6F8EE] text-[#068241] px-2 py-0.5 border border-[#8CE0B0] font-semibold">
-            SANDBOX ENVIRONMENT
+            IN DEVELOPMENT
           </span>
         </div>
         <div className="flex items-center space-x-2 font-mono-tag text-[11px] text-[#55534E]">
           <RefreshCw className="w-3.5 h-3.5 animate-spin text-[#068241]" />
-          <span className="text-[#068241] font-bold">TX_SEQ: #PILOT-892-EU</span>
+          <span className="text-[#068241] font-bold">STATE: ARCHITECTING</span>
         </div>
       </div>
 
@@ -103,10 +99,6 @@ export function LivePipeline() {
               <div className="text-[11.5px] text-[#55534E] mt-1 leading-snug">
                 {step.sub}
               </div>
-              <div className="mt-2.5 pt-2 border-t border-[#DCD8CF] flex items-center justify-between font-mono-tag text-[10.5px]">
-                <span className="text-[#8E8B82]">LATENCY:</span>
-                <span className="text-[#068241] font-bold">{step.metric}</span>
-              </div>
             </div>
           );
         })}
@@ -116,13 +108,13 @@ export function LivePipeline() {
       <div className="bg-[#121211] text-[#EFECE5] p-3.5 border border-[#121211] font-mono-tag text-[12px] overflow-x-auto">
         <div className="flex items-center space-x-2 text-[#8E8B82] mb-1.5 text-[11px]">
           <span className="inline-block w-2 h-2 rounded-full bg-[#068241]"></span>
-          <span>PIPELINE_ORCHESTRATOR // STREAM_ID: stream_pilot_cohort_01</span>
+          <span>ENGINEERING_BLUEPRINT // ACTIVE DESIGN CYCLE</span>
         </div>
         <p className="text-[#00FFD5]">
-          &gt; Step [{steps[activeStep].id}] Processing: {steps[activeStep].name}...
+          &gt; Target Stage [{steps[activeStep].id}]: {steps[activeStep].name}...
         </p>
         <p className="text-[#8CE0B0] text-[11.5px] mt-0.5">
-          &gt; Node consensus verified. Cryptographic receipt committed. Pilot latency budget: &lt;1000ms target.
+          &gt; Goal: Replacing multi-vendor fragmentation with unified virtual accounts and autonomous risk checks.
         </p>
       </div>
     </div>
