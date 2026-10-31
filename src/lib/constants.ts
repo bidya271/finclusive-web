@@ -6,174 +6,191 @@ export interface AspirationalPillar {
 
 export const ASPIRATIONAL_PILLARS: AspirationalPillar[] = [
   { 
-    label: "CROSS-BORDER MISSION", 
-    target: "Zero Friction", 
-    mission: "Instant, transparent remittances without hidden correspondent banking fees" 
-  },
-  { 
-    label: "REGULATORY COMPLIANCE", 
+    label: "AGENTIC SDLC ACCELERATION", 
     target: "Autonomous", 
-    mission: "AI-driven entity screening, automated SAR reporting, and sponsor bank escrow" 
+    mission: "Agents that transform business requirements, wireframes, and BRDs into production code, verified test plans, and release artifacts." 
   },
   { 
-    label: "SETTLEMENT FINALITY", 
-    target: "Atomic & Direct", 
-    mission: "Direct clearing into SEPA Instant, UK Faster Payments, UPI & local rails" 
+    label: "GOVERNANCE & POLICY SHIELD", 
+    target: "Continuous Audit", 
+    mission: "Automated compliance monitors with deterministic policy bounds, real-time sanction checks, and verifiable audit trails." 
   },
   { 
-    label: "DEVELOPER ACCELERATION", 
-    target: "Plug-and-Scale", 
-    mission: "Unified multi-currency virtual ledgers designed to replace fragmented legacy vendor stacks" 
+    label: "ENTERPRISE WORKFLOW FABRIC", 
+    target: "Model Context Protocol", 
+    mission: "Secure MCP servers and tool registries bridging enterprise core databases, banking ledgers, and autonomous agent swarms." 
+  },
+  { 
+    label: "SELF-HEALING REGRESSION", 
+    target: "Shift-Left AI", 
+    mission: "Continuous NLP-driven test generation and autonomous regression suites eliminating release bottlenecks across digital channels." 
   },
 ];
 
 export const CORE_CAPABILITIES = [
   {
     id: "01",
-    code: "BAAS-LEDGER",
-    title: "Autonomous Banking-as-a-Service",
-    summary: "Multi-currency virtual ledger architecture engineered to provide programmable accounts and real-time double-entry reconciliation.",
+    code: "AGENTIC-STUDIO",
+    title: "Autonomous SDLC Orchestration",
+    summary: "Viom-class engineering accelerator transforming business requirements, architecture blueprints, and design systems into executable code and verified pull requests.",
     details: [
-      "Dynamic virtual IBAN issuance mapped to regulated sponsor banking rails.",
-      "Deterministic balance state verification with cryptographic audit trails.",
-      "Real-time event webhooks for balance adjustments and limits enforcement."
+      "Context graph linking business requirement documents (BRDs) directly to user stories and code tasks.",
+      "Multi-agent review pipelines executing automated static analysis, security vetting, and architecture checks.",
+      "Direct GitHub, GitLab, and Jira bi-directional synchronization with immutable audit steps."
     ],
-    status: "IN DEVELOPMENT",
-    tag: "Core Engine"
+    status: "ACTIVE DESIGN",
+    tag: "Core Studio"
   },
   {
     id: "02",
-    code: "AI-SANCTIONS",
-    title: "Agentic Compliance & Risk Shield",
-    summary: "Continuous transaction monitoring combining graph heuristics and fine-tuned regulatory reasoning models.",
+    code: "ENTERPRISE-MCP",
+    title: "Enterprise Tool Context Protocol",
+    summary: "Standardized Model Context Protocol (MCP) gateway connecting large foundation models securely to regulated banking ledgers, CRM records, and core databases.",
     details: [
-      "Targeted sub-second OFAC, UN, and PEP sanction matching with entity disambiguation.",
-      "Automated Suspicious Activity Report (SAR) narrative draft synthesis.",
-      "Dynamic risk-based transaction velocity checks tailored to entity profiles."
+      "Zero-trust credential encapsulation preventing model tool prompt injection and lateral escalation.",
+      "Granular role-based execution gates with mandatory human-in-the-loop approvals for sensitive writes.",
+      "Real-time event streams capturing model reasoning, tool invocations, and output telemetry."
     ],
     status: "PROTOTYPING",
-    tag: "Autonomous AI"
+    tag: "Tool Fabric"
   },
   {
     id: "03",
-    code: "FX-SETTLEMENT",
-    title: "Cross-Border Liquidity Rails",
-    summary: "High-frequency remittance routing architecture aligned with RemitPe's global corridor vision.",
+    code: "PROCESS-DISCOVERY",
+    title: "AI Process Discovery & Optimization",
+    summary: "Intelligent analytics engines that ingest enterprise event logs, map true operational workflows, and synthesize automated execution DAGs.",
     details: [
-      "Automated FX spread optimization and real-time liquidity routing.",
-      "Direct integration with regional clearing rails: SEPA Instant, Faster Payments, and local corridors.",
-      "Minimizing counterparty settlement risk via atomic double-entry clearing."
+      "Automated extraction of enterprise process variants, cycle times, and operational bottlenecks.",
+      "Synthesis of agentic task runners replacing brittle RPA scripts with self-correcting agents.",
+      "Continuous efficiency scoring and real-time operational deviation alerts."
     ],
-    status: "REMITPE VISION",
-    tag: "RemitPe Rails"
+    status: "FRAMEWORK",
+    tag: "Process AI"
   },
   {
     id: "04",
-    code: "ORCHESTRATOR",
-    title: "Full-Stack Core Banking Accelerator",
-    summary: "Pre-assembled digital banking middleware connecting regulated sponsor banks with agile customer experiences.",
+    code: "SELF-HEALING-TEST",
+    title: "Autonomous Regression & UAT Engine",
+    summary: "Natural-language test synthesis that continuously generates, executes, and self-heals end-to-end regression test suites across digital channels.",
     details: [
-      "White-label mobile & web neobank SDK blueprints with biometric authentication.",
-      "Modular card issuance (virtual & physical card provisioning architectures).",
-      "Unified compliance dashboard for sponsor bank regulatory transparency."
+      "Autonomous UI and API test synthesis from user journey logs and Figma design assets.",
+      "Self-healing Playwright and Cypress test runners that adapt selectors during UI refactors.",
+      "Automated compliance evidence generation for regulator-ready UAT verification."
     ],
-    status: "ROADMAP",
-    tag: "Viom-Class Stack"
+    status: "IN DEVELOPMENT",
+    tag: "Quality Guard"
   }
 ];
 
 export const CODE_SNIPPETS = {
-  account: {
+  workflow: {
     language: "typescript",
-    title: "POST /v1/baas/virtual-accounts",
-    filename: "create-ledger-account.ts",
-    code: `import { FinclusiveClient } from "@finclusive/sdk";
+    title: "Workflow Agent Pipeline // Intent to Verification",
+    filename: "agentic-sdlc-orchestrator.ts",
+    code: `import { AgentRuntime, ModelContextProtocol } from "@finclusive/agent-core";
 
-const finclusive = new FinclusiveClient({
-  apiKey: process.env.FINCLUSIVE_SECRET_KEY!,
-  environment: "sandbox"
+// Initialize sovereign enterprise agent workflow
+const orchestrator = new AgentRuntime({
+  tenantId: "enterprise_core_finance",
+  policyShield: "strict_banking_governance_v2",
+  auditMode: "immutable_ledger"
 });
 
-// Programmatic virtual account provision blueprint
-const account = await finclusive.accounts.create({
-  holder: {
-    type: "corporate",
-    legalName: "FinTech Innovation Labs",
-    jurisdiction: "GB",
-    verifiedKybId: "kyb_sandbox_ref"
-  },
-  currency: "EUR",
-  features: ["SEPA_INSTANT", "DIRECT_DEBIT", "AGENTIC_RECONCILIATION"],
-  metadata: {
-    purpose: "cross_border_remittance_pilot",
-    escrowTier: "sponsor_bank_aligned"
-  }
+// Register Model Context Protocol (MCP) tool servers
+orchestrator.registerToolServer({
+  name: "core-ledger-mcp",
+  endpoint: "https://mcp.internal.finclusive.si",
+  capabilities: ["read_accounts", "simulate_settlement", "generate_sar"]
 });
 
-console.log("Virtual account provisioned:", account.iban);
-// => IBAN: DE89 3704 0044 0532 0130 00`
+// Execute multi-agent autonomous workflow
+const mission = await orchestrator.dispatchWorkflow({
+  intent: "Synthesize regulatory compliance pack & execute regression suite",
+  context: {
+    brdReference: "BRD-2026-REG-09",
+    targetChannels: ["web-portal", "mobile-app", "core-api"]
   },
-  compliance: {
+  agents: [
+    { role: "RequirementsAnalyst", model: "claude-3-7-sonnet" },
+    { role: "VerificationEngineer", model: "gpt-4o" },
+    { role: "ComplianceAuditor", model: "finclusive-governance-v1" }
+  ]
+});
+
+console.log("Workflow State:", mission.status);
+// => Status: VERIFIED | 14 Tests Synthesized | 0 Policy Violations`
+  },
+  mcp: {
+    language: "json",
+    title: "MCP Tool Definition & Security Policy Schema",
+    filename: "mcp-banking-tools.json",
+    code: `{
+  "server": "finclusive-enterprise-mcp",
+  "version": "1.2.0",
+  "governance": {
+    "requireHumanConfirmation": ["execute_transfer", "revoke_credential"],
+    "rateLimitPerMinute": 120,
+    "piiMasking": true
+  },
+  "tools": [
+    {
+      "name": "audit_account_ledger",
+      "description": "Deterministic double-entry balance verification with cryptographic proof",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "accountId": { "type": "string" },
+          "dateRange": { "type": "string" }
+        },
+        "required": ["accountId"]
+      }
+    },
+    {
+      "name": "generate_compliance_dossier",
+      "description": "Synthesizes suspicious activity audit dossiers from contextual graph logs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "entityId": { "type": "string" },
+          "jurisdiction": { "type": "string", "enum": ["EU", "UK", "US"] }
+        },
+        "required": ["entityId", "jurisdiction"]
+      }
+    }
+  ]
+}`
+  },
+  agent: {
     language: "python",
-    title: "AI Compliance Screening Pipeline",
-    filename: "agentic_sar_evaluator.py",
-    code: `from finclusive_ai import RiskSupervisor, ContextGraph
+    title: "Autonomous Process Optimization Worker",
+    filename: "process_discovery_agent.py",
+    code: `from finclusive_agents import ProcessMiningSupervisor, TaskGraph
 
-supervisor = RiskSupervisor(model="finclusive-reason-v4")
+supervisor = ProcessMiningSupervisor(
+    telemetry_source="enterprise_event_mesh",
+    optimization_goal="minimize_cycle_time_and_exceptions"
+)
 
-async def evaluate_transaction(tx):
-    # Contextual graph evaluation against sanction lists & behavioural risk
-    risk_evaluation = await supervisor.evaluate_intent(
-        sender=tx.sender_id,
-        recipient=tx.recipient_iban,
-        amount=tx.amount,
-        corridor=tx.corridor,
-        device_fingerprint=tx.telemetry
+async def optimize_customer_onboarding_pipeline():
+    # Discover real execution topology from production event streams
+    process_graph = await supervisor.extract_topology(
+        pipeline="institutional_account_onboarding",
+        sample_window="last_30_days"
     )
     
-    if risk_evaluation.flagged:
-        sar_draft = await supervisor.synthesize_regulatory_dossier(risk_evaluation)
-        return {"action": "HOLD_FOR_SPONSOR", "dossier": sar_draft.id}
-        
-    return {"action": "APPROVE_ATOMIC_CLEAR", "status": "COMPLIANT"}`
-  },
-  ledger: {
-    language: "json",
-    title: "Immutable Double-Entry Ledger Event",
-    filename: "ledger_audit_diff.json",
-    code: `{
-  "event_id": "evt_sandbox_ref",
-  "timestamp": "2026-10-29T10:48:19.402Z",
-  "operation": "CROSS_BORDER_DISBURSEMENT",
-  "corridor": "EUR -> INR",
-  "entries": [
-    {
-      "account": "liab:customer:cust_pilot",
-      "currency": "EUR",
-      "amount": "-500.00",
-      "type": "DEBIT"
-    },
-    {
-      "account": "asset:settlement:remitpe_eur",
-      "currency": "EUR",
-      "amount": "+500.00",
-      "type": "CREDIT"
-    },
-    {
-      "account": "asset:treasury:remitpe_inr",
-      "currency": "INR",
-      "amount": "-45250.00",
-      "type": "DEBIT"
-    },
-    {
-      "account": "liab:beneficiary:inr_recipient",
-      "currency": "INR",
-      "amount": "+45250.00",
-      "type": "CREDIT"
-    }
-  ],
-  "cryptographic_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "status": "ATOMIC_SETTLED"
-}`
+    # Identify bottlenecks, redundant approval hops & exception paths
+    diagnosis = await supervisor.analyze_bottlenecks(process_graph)
+    
+    # Synthesize executable DAG to automate repetitive compliance clearances
+    optimized_workflow = await supervisor.synthesize_agentic_workflow(
+        bottlenecks=diagnosis.critical_path,
+        guardrails={"max_autonomous_limit_eur": 50000}
+    )
+    
+    return {
+        "status": "WORKFLOW_READY",
+        "predicted_cycle_reduction": "72%",
+        "executable_dag": optimized_workflow.spec_id
+    }`
   }
 };

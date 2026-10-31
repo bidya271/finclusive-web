@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { CODE_SNIPPETS } from "@/lib/constants";
-import { Terminal, Copy, Check, Code2, ShieldAlert, BookOpen } from "lucide-react";
+import { Terminal, Copy, Check, Bot, Cpu, ShieldCheck } from "lucide-react";
 
 export function ArchitectureShowcase() {
-  const [activeTab, setActiveTab] = useState<"account" | "compliance" | "ledger">("account");
+  const [activeTab, setActiveTab] = useState<"workflow" | "mcp" | "agent">("workflow");
   const [copied, setCopied] = useState(false);
 
   const current = CODE_SNIPPETS[activeTab];
@@ -25,14 +25,14 @@ export function ArchitectureShowcase() {
           <div>
             <div className="flex items-center space-x-2 font-mono-tag text-[12px] text-[#068241] font-bold uppercase tracking-wider mb-2">
               <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-              <span>[03 // DEVELOPER SANDBOX ARTIFACTS]</span>
+              <span>[03 // AGENT RUNTIME &amp; MCP TOOL FABRIC]</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211]">
-              Engineered like software, not legacy banking.
+              Inspect the agentic execution engine.
             </h2>
           </div>
           <p className="mt-4 md:mt-0 text-[14.5px] text-[#55534E] max-w-md">
-            Inspect clean developer interfaces for programmatic account provisioning, AI risk supervisor prompts, and immutable double-entry ledger state.
+            Developer interfaces for multi-agent SDLC orchestration, secure Model Context Protocol (MCP) server definitions, and autonomous process discovery.
           </p>
         </div>
 
@@ -45,36 +45,36 @@ export function ArchitectureShowcase() {
             {/* Tabs */}
             <div className="flex items-center space-x-2">
               <button
-                onClick={() => setActiveTab("account")}
+                onClick={() => setActiveTab("workflow")}
                 className={`px-3 py-1.5 font-mono-tag text-[12px] font-bold border transition-all ${
-                  activeTab === "account"
+                  activeTab === "workflow"
                     ? "bg-[#068241] text-white border-[#068241]"
                     : "bg-[#252524] text-[#AAA] border-transparent hover:text-white"
                 }`}
               >
-                01. Provision IBAN Account
+                01. Agentic SDLC Runtime
               </button>
 
               <button
-                onClick={() => setActiveTab("compliance")}
+                onClick={() => setActiveTab("mcp")}
                 className={`px-3 py-1.5 font-mono-tag text-[12px] font-bold border transition-all ${
-                  activeTab === "compliance"
+                  activeTab === "mcp"
                     ? "bg-[#068241] text-white border-[#068241]"
                     : "bg-[#252524] text-[#AAA] border-transparent hover:text-white"
                 }`}
               >
-                02. Agentic Risk Supervisor
+                02. Model Context Protocol (MCP)
               </button>
 
               <button
-                onClick={() => setActiveTab("ledger")}
+                onClick={() => setActiveTab("agent")}
                 className={`px-3 py-1.5 font-mono-tag text-[12px] font-bold border transition-all ${
-                  activeTab === "ledger"
+                  activeTab === "agent"
                     ? "bg-[#068241] text-white border-[#068241]"
                     : "bg-[#252524] text-[#AAA] border-transparent hover:text-white"
                 }`}
               >
-                03. Immutable Double-Entry
+                03. Process Optimization DAG
               </button>
             </div>
 
@@ -97,9 +97,9 @@ export function ArchitectureShowcase() {
           <div className="bg-[#171716] px-4 py-2 border-b border-[#2A2A29] flex items-center justify-between font-mono-tag text-[11.5px] text-[#A0A09B]">
             <div className="flex items-center space-x-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#068241]"></span>
-              <span>ENDPOINT: {current.title}</span>
+              <span>ARTIFACT: {current.title}</span>
             </div>
-            <span className="text-[#068241] font-bold bg-[#068241]/20 px-2 py-0.5 rounded">ENV: PILOT SANDBOX</span>
+            <span className="text-[#068241] font-bold bg-[#068241]/20 px-2 py-0.5 rounded">ENV: ENTERPRISE RUNTIME</span>
           </div>
 
           {/* Code Viewer */}
@@ -112,13 +112,13 @@ export function ArchitectureShowcase() {
           {/* Bottom terminal bar */}
           <div className="bg-[#1C1C1B] px-4 py-3 border-t border-[#333] flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono-tag text-[11px] text-[#888]">
             <div className="flex items-center space-x-2">
-              <span className="text-[#00FFD5]">STATUS:</span>
-              <span className="text-white">Active in Founding Partner Sandboxes</span>
+              <span className="text-[#00FFD5]">SECURITY GATES:</span>
+              <span className="text-white">Strict PII Masking &bull; Human-in-the-Loop Safeguards</span>
             </div>
             <div>
-              <span>SDK: </span>
-              <span className="text-[#068241] font-bold">@finclusive/sdk@v0.4.0-alpha</span>
-              <span className="ml-3 text-[#AAA]">TypeScript / Python</span>
+              <span>PACKAGE: </span>
+              <span className="text-[#068241] font-bold">@finclusive/agent-core@latest</span>
+              <span className="ml-3 text-[#AAA]">TypeScript / Python Runtime</span>
             </div>
           </div>
         </div>

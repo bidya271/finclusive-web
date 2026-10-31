@@ -24,20 +24,22 @@ const instrumentSerif = Instrument_Serif({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#5033A4",
+  themeColor: "#068241",
 };
 
 export const metadata: Metadata = {
-  title: "Finclusive.si — Sovereign Banking-as-a-Service & Autonomous Financial Infrastructure",
-  description: "Next-generation banking infrastructure engineering. Deploy sovereign BaaS, real-time cross-border settlement, and agentic compliance engines.",
+  title: "Finclusive.si — Enterprise Agentic AI & Autonomous Workflows for Financial Systems",
+  description: "Enterprise Agentic AI accelerators and autonomous SDLC workflows for mission-critical banking and fintech infrastructure. Inspired by Center-of-Intelligence architectures.",
   keywords: [
-    "Banking as a Service",
-    "BaaS",
-    "Fintech Infrastructure",
-    "AI Compliance",
-    "Cross-border Settlement",
-    "RemitPe",
-    "Virtual Ledgers",
+    "Agentic AI",
+    "Agentic Workflow",
+    "Enterprise AI Accelerators",
+    "Model Context Protocol",
+    "MCP",
+    "Agentic SDLC",
+    "Autonomous Regression Testing",
+    "Process Discovery",
+    "Fintech AI Infrastructure",
     "Finclusive"
   ],
   authors: [{ name: "Finclusive Tech" }],

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ShieldCheck, ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, Bot, Sparkles, Workflow } from "lucide-react";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,39 +26,36 @@ export function Navbar() {
             <div className="hidden md:flex items-center pl-3 border-l-[1.5px] border-[#DCD8CF] space-x-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#068241] animate-pulse ring-2 ring-[#068241]/20"></span>
               <span className="font-mono-tag text-[11px] text-[#068241] font-bold uppercase tracking-wider bg-[#E6F8EE] px-2 py-0.5 border border-[#8CE0B0]">
-                IN DEVELOPMENT // DESIGN PHASE
+                AGENTIC AI WORKFLOWS // IN DEVELOPMENT
               </span>
             </div>
           </div>
 
-          {/* Nav links */}
+          {/* Clean Nav links without RemitPe */}
           <nav className="hidden lg:flex items-center space-x-8">
+            <a 
+              href="#workflows" 
+              className="text-[14.5px] font-medium text-[#121211] hover:text-[#068241] transition-colors"
+            >
+              Agentic Workflows
+            </a>
             <a 
               href="#solutions" 
               className="text-[14.5px] font-medium text-[#121211] hover:text-[#068241] transition-colors"
             >
-              Capabilities
+              Enterprise AI Accelerators
             </a>
             <a 
               href="#architecture" 
               className="text-[14.5px] font-medium text-[#121211] hover:text-[#068241] transition-colors"
             >
-              Architecture &amp; API
+              MCP &amp; Agent Runtime
             </a>
             <a 
-              href="#remitpe-benchmark" 
-              className="text-[14.5px] font-medium text-[#121211] hover:text-[#068241] transition-colors flex items-center space-x-1.5"
-            >
-              <span>RemitPe Rails</span>
-              <span className="text-[10px] font-mono-tag font-bold bg-[#068241] text-white px-2 py-0.5 border border-[#121211] shadow-[1px_1px_0px_#121211]">
-                VISION
-              </span>
-            </a>
-            <a 
-              href="#calculator" 
+              href="#roadmap" 
               className="text-[14.5px] font-medium text-[#121211] hover:text-[#068241] transition-colors"
             >
-              Roadmap
+              Vision &amp; Roadmap
             </a>
           </nav>
 
@@ -68,7 +65,7 @@ export function Navbar() {
               href="#contact"
               className="brutalist-button-green inline-flex items-center space-x-2 px-4 py-2 text-[13.5px] font-bold tracking-wide"
             >
-              <span>Connect with Architects</span>
+              <span>Connect with AI Architects</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
@@ -89,32 +86,32 @@ export function Navbar() {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t-[1.5px] border-[#121211] space-y-3 bg-[#FAF8F5]">
             <a
+              href="#workflows"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-2 py-1 text-base font-medium text-[#121211]"
+            >
+              Agentic Workflows
+            </a>
+            <a
               href="#solutions"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-2 py-1 text-base font-medium text-[#121211]"
             >
-              Capabilities
+              Enterprise AI Accelerators
             </a>
             <a
               href="#architecture"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-2 py-1 text-base font-medium text-[#121211]"
             >
-              Architecture &amp; API
+              MCP &amp; Agent Runtime
             </a>
             <a
-              href="#remitpe-benchmark"
+              href="#roadmap"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-2 py-1 text-base font-medium text-[#121211]"
             >
-              RemitPe Rails
-            </a>
-            <a
-              href="#calculator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-2 py-1 text-base font-medium text-[#121211]"
-            >
-              Roadmap
+              Vision &amp; Roadmap
             </a>
             <div className="pt-2">
               <a
@@ -122,7 +119,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full brutalist-button-green inline-flex items-center justify-center space-x-2 px-4 py-2.5 text-[14px] font-bold tracking-wide"
               >
-                <span>Connect with Architects</span>
+                <span>Connect with AI Architects</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>

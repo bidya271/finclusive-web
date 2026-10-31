@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, CheckCircle2, Shield, Lock, Send, Sparkles } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Shield, Lock, Send, Bot, Workflow } from "lucide-react";
 import confetti from "canvas-confetti";
 
 export function ContactSection() {
@@ -10,7 +10,7 @@ export function ContactSection() {
     name: "",
     email: "",
     company: "",
-    jurisdiction: "EU",
+    domain: "Agentic SDLC",
     interest: "Design Partner / Early Pilot",
     requirements: ""
   });
@@ -39,11 +39,11 @@ export function ContactSection() {
               <span>[05 // DESIGN PARTNERSHIP INTAKE]</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211] leading-tight">
-              Collaborate directly with our engineering team.
+              Collaborate directly with our AI architecture team.
             </h2>
             
             <p className="mt-4 text-[15px] text-[#55534E] leading-relaxed">
-              We are actively developing the platform and seeking fintech founders, digital wallet operators, and cross-border teams to shape the API specifications and early sandbox releases.
+              We are actively developing autonomous agentic accelerators and seeking forward-looking engineering leaders, enterprise architects, and digital banking teams to shape our tool specs and early pilot deployments.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -52,7 +52,7 @@ export function ContactSection() {
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-[#121211]">
-                  <strong>Early Sandbox Access:</strong> Priority access to prototype APIs and documentation as they are released.
+                  <strong>Early Sandbox Access:</strong> Priority evaluation of Model Context Protocol (MCP) gateways and autonomous SDLC swarms.
                 </div>
               </div>
 
@@ -61,7 +61,7 @@ export function ContactSection() {
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-[#121211]">
-                  <strong>Corridor Alignment:</strong> Help us prioritize the payment corridors and local clearing rails your business needs.
+                  <strong>Enterprise Workflow Alignment:</strong> Tailor agent tool bindings directly to your Jira, GitHub, or core banking stack.
                 </div>
               </div>
 
@@ -70,19 +70,19 @@ export function ContactSection() {
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-[#121211]">
-                  <strong>Direct Engineering Channel:</strong> Regular feedback loops with the architects building the system.
+                  <strong>Direct Engineering Channel:</strong> Regular feedback loops with the AI systems architects building the platform.
                 </div>
               </div>
             </div>
 
             {/* Direct Office Address & Trust */}
             <div className="mt-10 p-4 bg-[#FAF8F5] border border-[#DCD8CF] font-mono-tag text-[12px] text-[#55534E]">
-              <div className="text-[#121211] font-bold mb-1">FINCLUSIVE.SI // ENGINEERING LABS</div>
+              <div className="text-[#121211] font-bold mb-1">FINCLUSIVE.SI // AI RESEARCH &amp; LABS</div>
               <div>Finclusive Tech d.o.o. / Finclusive Tech Pvt. Ltd.</div>
               <div className="text-[#8E8B82] mt-1">Ljubljana, Slovenia &bull; Global Operations</div>
               <div className="text-[#068241] mt-2 font-bold flex items-center space-x-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-                <span>PARTNER OF REMITPE ECOSYSTEM</span>
+                <span>ENTERPRISE AGENTIC AI ACCELERATOR</span>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export function ContactSection() {
                     Thank You for Reaching Out.
                   </h3>
                   <p className="mt-3 text-[14.5px] text-[#55534E] max-w-md mx-auto">
-                    We have received your note. A member of our engineering team will follow up directly at <strong className="text-[#121211]">{formData.email}</strong> to schedule an architecture conversation.
+                    We have received your note. A member of our AI engineering team will follow up directly at <strong className="text-[#121211]">{formData.email}</strong> to schedule an architecture conversation.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -133,7 +133,7 @@ export function ContactSection() {
                       <input
                         type="email"
                         required
-                        placeholder="maya@organization.com"
+                        placeholder="maya@enterprise.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
@@ -144,12 +144,12 @@ export function ContactSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[13px] font-semibold text-[#121211] mb-1">
-                        Company or Project *
+                        Organization / Enterprise *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="e.g. NextPay / Remit Labs"
+                        placeholder="e.g. Digital Bank / FinTech"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
@@ -158,28 +158,29 @@ export function ContactSection() {
 
                     <div>
                       <label className="block text-[13px] font-semibold text-[#121211] mb-1">
-                        Primary Corridor Interest
+                        Primary AI Workflow Focus
                       </label>
                       <select
-                        value={formData.jurisdiction}
-                        onChange={(e) => setFormData({ ...formData, jurisdiction: e.target.value })}
+                        value={formData.domain}
+                        onChange={(e) => setFormData({ ...formData, domain: e.target.value })}
                         className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
                       >
-                        <option value="EU">European Union (SEPA Instant / Virtual IBANs)</option>
-                        <option value="UK">United Kingdom (Faster Payments)</option>
-                        <option value="US">North America</option>
-                        <option value="CROSS">Cross-Border Remittances (Europe &rarr; Global)</option>
+                        <option value="Agentic SDLC">Agentic SDLC (BRD to Code &amp; Test)</option>
+                        <option value="Process Discovery">Process Discovery &amp; Optimization</option>
+                        <option value="Autonomous UAT">Autonomous Regression &amp; UAT</option>
+                        <option value="MCP Tool Gateways">Model Context Protocol (MCP) Infrastructure</option>
+                        <option value="AI Compliance">Automated Regulatory Compliance</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-[13px] font-semibold text-[#121211] mb-1">
-                      What are you building or exploring?
+                      What operational bottleneck are you looking to solve?
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Share your goals: e.g. Cross-border remittance integration, programmable virtual accounts, automated sanction screening..."
+                      placeholder="Share your goals: e.g. Automating requirement-to-test mapping, legacy process discovery, deploying secure MCP tool gateways..."
                       value={formData.requirements}
                       onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
                       className="w-full px-3.5 py-2.5 bg-white border-[1.5px] border-[#121211] text-[14px] text-[#121211] focus:outline-none focus:ring-2 focus:ring-[#068241]"
@@ -192,7 +193,7 @@ export function ContactSection() {
                       className="brutalist-button-green w-full inline-flex items-center justify-center space-x-2 py-3.5 text-white font-bold text-[15px]"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Start an Architecture Conversation</span>
+                      <span>Start an AI Architecture Conversation</span>
                     </button>
                   </div>
 

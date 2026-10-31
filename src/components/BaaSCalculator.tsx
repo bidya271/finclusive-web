@@ -1,34 +1,34 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, CheckCircle2, Compass, Layers, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Bot, Layers, Workflow, ShieldCheck, Zap } from "lucide-react";
 
 export function BaaSCalculator() {
-  const [selectedCorridor, setSelectedCorridor] = useState<string>("EU-UK");
-  const [useCase, setUseCase] = useState<string>("Remittances");
+  const [selectedWorkflow, setSelectedWorkflow] = useState<string>("SDLC");
+  const [governanceTier, setGovernanceTier] = useState<string>("Banking");
 
-  const corridorProfiles: Record<string, { rails: string; timeline: string; impact: string }> = {
-    "EU-UK": {
-      rails: "SEPA Instant & UK Faster Payments",
+  const workflowProfiles: Record<string, { title: string; timeline: string; impact: string }> = {
+    "SDLC": {
+      title: "BRD to Production Code & Regression",
       timeline: "Target Pilot Q1",
-      impact: "Zero-markup corridors between Europe & Britain for migrant workers."
+      impact: "Autonomous parsing of enterprise requirements, generating verified user stories, code diffs, and self-healing test suites."
     },
-    "CROSS-BORDER": {
-      rails: "SEPA to UPI, Pix & Regional Clearing",
+    "PROCESS": {
+      title: "AI Process Discovery & Operational DAGs",
       timeline: "Target Pilot Q2",
-      impact: "Direct remittance settlement from European accounts directly to beneficiary bank wallets."
+      impact: "Mine enterprise event streams, identify critical-path bottlenecks, and synthesize agentic workflows to automate operational approvals."
     },
-    "GLOBAL": {
-      rails: "Multi-Currency Virtual Ledgers",
+    "COMPLIANCE": {
+      title: "Continuous Policy & Regulatory Auditing",
       timeline: "Design Phase",
-      impact: "Universal programmatic ledger for global fintechs seeking turnkey sponsor banking."
+      impact: "Real-time compliance monitoring across core ledgers, synthesizing regulator-ready SAR dossiers and deterministic audit trails."
     }
   };
 
-  const activeProfile = corridorProfiles[selectedCorridor];
+  const activeProfile = workflowProfiles[selectedWorkflow];
 
   return (
-    <section id="calculator" className="py-16 sm:py-24 border-b-[1.5px] border-[#121211] bg-[#FAF8F5]">
+    <section id="roadmap" className="py-16 sm:py-24 border-b-[1.5px] border-[#121211] bg-[#FAF8F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -36,14 +36,14 @@ export function BaaSCalculator() {
           <div>
             <div className="flex items-center space-x-2 font-mono-tag text-[12px] text-[#068241] font-bold uppercase tracking-wider mb-2">
               <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-              <span>[04 // ARCHITECTURE ROADMAP EXPLORER]</span>
+              <span>[04 // AGENTIC AI ROADMAP EXPLORER]</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211]">
-              Explore the corridors we are designing.
+              Explore the agentic workflows we are designing.
             </h2>
           </div>
           <p className="mt-4 md:mt-0 text-[14.5px] text-[#55534E] max-w-md">
-            Interactive overview of the payment corridors, clearing rails, and capabilities on our engineering roadmap.
+            Interactive overview of the autonomous workflows, Model Context Protocol (MCP) integrations, and governance gates on our engineering roadmap.
           </p>
         </div>
 
@@ -53,23 +53,23 @@ export function BaaSCalculator() {
           {/* Controls Column */}
           <div className="lg:col-span-6 bg-white p-6 sm:p-8 border-[1.5px] border-[#121211] shadow-[4px_4px_0px_#121211] space-y-6">
             
-            {/* Step 1: Corridor selection */}
+            {/* Step 1: Workflow Domain */}
             <div>
               <label className="block text-[14px] font-semibold text-[#121211] mb-2.5">
-                Target Payment Corridor
+                Target Workflow Domain
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { id: "EU-UK", label: "EU & UK Rails" },
-                  { id: "CROSS-BORDER", label: "Europe to Asia/LATAM" },
-                  { id: "GLOBAL", label: "Multi-Currency" },
+                  { id: "SDLC", label: "Agentic SDLC" },
+                  { id: "PROCESS", label: "Process Mining" },
+                  { id: "COMPLIANCE", label: "AI Governance" },
                 ].map((item) => (
                   <button
                     key={item.id}
                     type="button"
-                    onClick={() => setSelectedCorridor(item.id)}
+                    onClick={() => setSelectedWorkflow(item.id)}
                     className={`py-2.5 px-3 text-[12px] font-semibold border text-center transition-all ${
-                      selectedCorridor === item.id
+                      selectedWorkflow === item.id
                         ? "border-[#121211] bg-[#068241] text-white shadow-[2px_2px_0px_#121211]"
                         : "border-[#DCD8CF] bg-[#FAF8F5] text-[#55534E] hover:border-[#121211]"
                     }`}
@@ -80,23 +80,23 @@ export function BaaSCalculator() {
               </div>
             </div>
 
-            {/* Step 2: Use Case */}
+            {/* Step 2: Governance Tier */}
             <div>
               <label className="block text-[14px] font-semibold text-[#121211] mb-2.5">
-                Target Application Type
+                Target Governance Environment
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  "Remittances",
-                  "Neobank Wallets",
-                  "B2B Payouts"
+                  "Banking Core",
+                  "Fintech Scale",
+                  "Enterprise IT"
                 ].map((item) => (
                   <button
                     key={item}
                     type="button"
-                    onClick={() => setUseCase(item)}
+                    onClick={() => setGovernanceTier(item)}
                     className={`py-2.5 px-3 text-[12px] font-semibold border text-center transition-all ${
-                      useCase === item
+                      governanceTier === item
                         ? "border-[#121211] bg-[#5033A4] text-white shadow-[2px_2px_0px_#121211]"
                         : "border-[#DCD8CF] bg-[#FAF8F5] text-[#55534E] hover:border-[#121211]"
                     }`}
@@ -111,15 +111,15 @@ export function BaaSCalculator() {
             <div className="pt-4 border-t border-[#DCD8CF] space-y-2.5 text-[13px] text-[#55534E]">
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#068241]" />
-                <span>Virtual ledger accounts with real-time balance reconciliation</span>
+                <span>Deterministic human-in-the-loop review gates for high-stakes actions</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#068241]" />
-                <span>Automated sanction screening powered by agentic AI</span>
+                <span>Model Context Protocol (MCP) tool integration with zero-trust credentials</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#068241]" />
-                <span>Regulated sponsor banking escrow alignment</span>
+                <span>End-to-end telemetry and immutable execution step logging</span>
               </div>
             </div>
 
@@ -138,10 +138,10 @@ export function BaaSCalculator() {
             {/* Selected Profile Details */}
             <div className="p-4 bg-[#E6F8EE] border-[1.5px] border-[#068241] shadow-[2px_2px_0px_#068241]">
               <div className="font-mono-tag text-[11px] text-[#068241] font-bold uppercase">
-                TARGET CLEARING RAILS
+                TARGET WORKFLOW CAPABILITY
               </div>
               <div className="font-serif-display text-2xl sm:text-3xl text-[#121211] mt-1">
-                {activeProfile.rails}
+                {activeProfile.title}
               </div>
               <p className="text-[13px] text-[#55534E] mt-2 leading-relaxed">
                 {activeProfile.impact}
@@ -151,11 +151,11 @@ export function BaaSCalculator() {
             {/* Aspirational Blueprint Matrix */}
             <div className="p-4 bg-[#FAF8F5] border border-[#DCD8CF] space-y-2.5">
               <div className="flex items-center justify-between text-[13px]">
-                <span className="text-[#55534E]">Target Application:</span>
-                <span className="font-mono-tag font-bold text-[#5033A4]">{useCase}</span>
+                <span className="text-[#55534E]">Environment Context:</span>
+                <span className="font-mono-tag font-bold text-[#5033A4]">{governanceTier}</span>
               </div>
               <div className="flex items-center justify-between text-[13px]">
-                <span className="text-[#55534E]">Engineering Milestone:</span>
+                <span className="text-[#55534E]">Milestone Target:</span>
                 <span className="font-mono-tag font-bold text-[#068241]">{activeProfile.timeline}</span>
               </div>
               <div className="flex items-center justify-between text-[13px]">
@@ -169,7 +169,7 @@ export function BaaSCalculator() {
               href="#contact"
               className="brutalist-button-green w-full inline-flex items-center justify-center space-x-2 py-3 text-white font-bold text-[14px]"
             >
-              <span>Join as an Early Design Partner</span>
+              <span>Join as an Enterprise Design Partner</span>
               <ArrowRight className="w-4 h-4" />
             </a>
 

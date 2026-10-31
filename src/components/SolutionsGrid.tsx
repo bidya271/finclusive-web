@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { CORE_CAPABILITIES } from "@/lib/constants";
-import { ArrowUpRight, Check, Shield, Cpu, RefreshCw, Layers } from "lucide-react";
+import { ArrowUpRight, Bot, Cpu, Layers, Workflow, ShieldCheck } from "lucide-react";
 
 export function SolutionsGrid() {
   const [activeCard, setActiveCard] = useState<string>("01");
@@ -16,14 +16,14 @@ export function SolutionsGrid() {
           <div>
             <div className="flex items-center space-x-2 font-mono-tag text-[12px] text-[#068241] font-bold uppercase tracking-wider mb-2">
               <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-              <span>[02 // MODULAR CAPABILITIES FOR FOUNDING TEAMS]</span>
+              <span>[02 // AGENTIC AI ACCELERATOR MODULES]</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211]">
-              Architected for early-stage fintech builders.
+              Architected for enterprise intelligence &amp; autonomous engineering.
             </h2>
           </div>
           <p className="mt-4 md:mt-0 text-[14.5px] text-[#55534E] max-w-md">
-            Four lean, high-velocity primitives designed to get your pilot into production without bloated legacy vendor lock-in.
+            Four specialized agentic frameworks inspired by modern Center-of-Intelligence architectures, replacing manual enterprise friction with autonomous precision.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export function SolutionsGrid() {
                     href="#contact"
                     className="font-mono-tag text-[12px] text-[#068241] hover:text-[#056e37] font-bold inline-flex items-center space-x-1"
                   >
-                    <span>REQUEST PILOT SPEC</span>
+                    <span>EXPLORE ACCELERATOR SPEC</span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-[#068241]" />
                   </a>
                 </div>

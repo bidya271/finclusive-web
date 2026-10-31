@@ -18,7 +18,7 @@ export function Footer() {
             </div>
             
             <p className="mt-4 text-[14px] text-[#A0A09B] leading-relaxed max-w-sm">
-              Sovereign digital banking and autonomous cross-border payment infrastructure engineered for next-generation fintech startups.
+              Autonomous agentic AI workflows, enterprise accelerators, and secure Model Context Protocol infrastructure engineered for mission-critical financial systems.
             </p>
 
             <div className="mt-6 font-mono-tag text-[11px] text-[#068241] flex items-center space-x-2 font-bold">
@@ -27,50 +27,28 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6 font-mono-tag text-[12px]">
+          <div className="md:col-span-7 grid grid-cols-2 gap-8 font-mono-tag text-[12px]">
             <div>
               <div className="text-[#068241] font-bold uppercase mb-3 text-[11px] tracking-wider">
-                SOLUTIONS
+                SOLUTIONS &amp; ACCELERATORS
               </div>
               <ul className="space-y-2 text-[#A0A09B]">
-                <li><a href="#solutions" className="hover:text-white transition-colors">BaaS Ledger Core</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">AI Sanctions Engine</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">Corridor FX Router</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">Virtual IBANs</a></li>
+                <li><a href="#solutions" className="hover:text-white transition-colors">Agentic SDLC Studio</a></li>
+                <li><a href="#solutions" className="hover:text-white transition-colors">Enterprise MCP Gateways</a></li>
+                <li><a href="#solutions" className="hover:text-white transition-colors">Process Discovery &amp; Optimization</a></li>
+                <li><a href="#solutions" className="hover:text-white transition-colors">Autonomous Regression Testing</a></li>
               </ul>
             </div>
 
             <div>
               <div className="text-[#068241] font-bold uppercase mb-3 text-[11px] tracking-wider">
-                ECOSYSTEM
+                PLATFORM &amp; DEVELOPERS
               </div>
               <ul className="space-y-2 text-[#A0A09B]">
-                <li>
-                  <a href="https://wl.remitpe.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center space-x-1">
-                    <span>RemitPe Portal</span>
-                    <ArrowUpRight className="w-3 h-3 text-[#068241]" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://remitpe.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center space-x-1">
-                    <span>RemitPe Main</span>
-                    <ArrowUpRight className="w-3 h-3 text-[#068241]" />
-                  </a>
-                </li>
-                <li><a href="#architecture" className="hover:text-white transition-colors">Sandbox API</a></li>
-                <li><a href="#calculator" className="hover:text-white transition-colors">Startup Sizing</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-[#068241] font-bold uppercase mb-3 text-[11px] tracking-wider">
-                CORRIDORS
-              </div>
-              <ul className="space-y-2 text-[#A0A09B]">
-                <li>Slovenia (EU SEPA)</li>
-                <li>United Kingdom</li>
-                <li>United States</li>
-                <li>Cross-Border Rails</li>
+                <li><a href="#workflows" className="hover:text-white transition-colors">Agent Swarm Topologies</a></li>
+                <li><a href="#architecture" className="hover:text-white transition-colors">Model Context Protocol (MCP)</a></li>
+                <li><a href="#roadmap" className="hover:text-white transition-colors">Architecture Roadmap</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">Design Partner Program</a></li>
               </ul>
             </div>
           </div>
@@ -86,7 +64,7 @@ export function Footer() {
           <div className="flex items-center space-x-6 text-[#A0A09B]">
             <a href="#" className="hover:text-white">Security Disclosures</a>
             <a href="#" className="hover:text-white">Privacy Architecture</a>
-            <a href="#" className="hover:text-white">Pilot Terms</a>
+            <a href="#" className="hover:text-white">Responsible AI Framework</a>
           </div>
         </div>
 
