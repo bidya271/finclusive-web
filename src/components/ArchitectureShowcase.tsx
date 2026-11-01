@@ -1,14 +1,93 @@
 "use client";
 
 import React, { useState } from "react";
-import { CODE_SNIPPETS } from "@/lib/constants";
-import { Terminal, Copy, Check, Bot, Cpu, ShieldCheck } from "lucide-react";
+import { Check, Copy } from "lucide-react";
+
+const CODE_EXAMPLES = {
+  orchestration: {
+    title: "Autonomous SDLC Orchestration",
+    language: "typescript",
+    filename: "orchestrator.ts",
+    code: `import { EnterpriseAgentRuntime } from "@finclusive/agent-core";
+
+// Define the mission with banking governance bounds
+const runtime = new EnterpriseAgentRuntime({
+  contextTier: "digital_core_banking",
+  policyRuleset: "iso_20022_strict_compliance",
+  humanApprovalRequired: true
+});
+
+// Dispatch multi-agent engineering workflow
+const execution = await runtime.dispatch({
+  intent: "Synthesize escrow release workflow from BRD-2026-08",
+  documents: ["s3://compliance/brd_escrow_v2.pdf"],
+  targets: ["core-ledger-service", "mobile-app-sdk"]
+});
+
+console.log("Synthesized artifacts:", execution.verifiedStories);
+// => 14 User Stories Generated | 0 Policy Violations | Ready for Review`
+  },
+  mcp: {
+    title: "Model Context Protocol Tool Schema",
+    language: "json",
+    filename: "mcp-server-config.json",
+    code: `{
+  "name": "finclusive-banking-gateway",
+  "version": "1.4.0",
+  "security": {
+    "piiMasking": true,
+    "auditStream": "kinesis://banking-audit-telemetry",
+    "requireConfirmation": ["dispatch_settlement", "modify_kyb_status"]
+  },
+  "tools": [
+    {
+      "name": "audit_ledger_consistency",
+      "description": "Performs deterministic double-entry reconciliation across virtual accounts",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "tenantId": { "type": "string" },
+          "reconcileWindow": { "type": "string" }
+        },
+        "required": ["tenantId"]
+      }
+    }
+  ]
+}`
+  },
+  process: {
+    title: "Process Mining Discovery Engine",
+    language: "python",
+    filename: "process_miner.py",
+    code: `from finclusive_ai import ProcessDiscoveryEngine
+
+# Connect directly to institutional event telemetry
+miner = ProcessDiscoveryEngine(
+    event_stream="kafka://banking-operations-mesh",
+    window="last_30_days"
+)
+
+# Extract actual operational execution topologies
+topology = miner.reconstruct_workflow(
+    process_name="commercial_loan_origination"
+)
+
+# Identify systemic bottlenecks and synthesize autonomous execution paths
+optimization = topology.synthesize_agentic_accelerator(
+    target_kpi="reduce_manual_approval_wait_time",
+    guardrails={"max_autonomous_limit_eur": 25000}
+)
+
+print(f"Discovered {len(topology.variants)} workflow variants.")
+print(f"Generated accelerator DAG: {optimization.dag_id}")`
+  }
+};
 
 export function ArchitectureShowcase() {
-  const [activeTab, setActiveTab] = useState<"workflow" | "mcp" | "agent">("workflow");
+  const [activeTab, setActiveTab] = useState<"orchestration" | "mcp" | "process">("orchestration");
   const [copied, setCopied] = useState(false);
 
-  const current = CODE_SNIPPETS[activeTab];
+  const current = CODE_EXAMPLES[activeTab];
 
   const handleCopy = () => {
     navigator.clipboard.writeText(current.code);
@@ -17,112 +96,75 @@ export function ArchitectureShowcase() {
   };
 
   return (
-    <section id="architecture" className="py-16 sm:py-24 border-b-[1.5px] border-[#121211] bg-[#FAF8F5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b-[1.5px] border-[#121211]">
-          <div>
-            <div className="flex items-center space-x-2 font-mono-tag text-[12px] text-[#068241] font-bold uppercase tracking-wider mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-              <span>[03 // AGENT RUNTIME &amp; MCP TOOL FABRIC]</span>
-            </div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211]">
-              Inspect the agentic execution engine.
-            </h2>
-          </div>
-          <p className="mt-4 md:mt-0 text-[14.5px] text-[#55534E] max-w-md">
-            Developer interfaces for multi-agent SDLC orchestration, secure Model Context Protocol (MCP) server definitions, and autonomous process discovery.
+    <section id="protocol" className="py-24 sm:py-32 bg-[#FAF8F5] border-t border-[#EAE6DF]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+        <div className="max-w-3xl">
+          <h2 className="fluid-heading text-[#141715]">
+            Model Context Protocol &amp; developer interfaces.
+          </h2>
+          <p className="mt-4 text-lg text-[#575E59] leading-relaxed">
+            Real code, real schemas, and zero pseudo-technology. Inspect the architecture connecting enterprise LLMs to core institutional infrastructure.
           </p>
         </div>
 
-        {/* Code Sandbox Display */}
-        <div className="border-[1.5px] border-[#121211] bg-[#121211] text-[#FAF8F5] shadow-[6px_6px_0px_#068241] overflow-hidden">
-          
-          {/* Window Titlebar */}
-          <div className="bg-[#1C1C1B] px-4 py-3 border-b border-[#333] flex flex-wrap items-center justify-between gap-3">
-            
-            {/* Tabs */}
+        {/* Tabbed Code Window */}
+        <div className="mt-12 rounded-2xl bg-[#0D1411] text-[#FAF8F5] overflow-hidden soft-elevation">
+          {/* Header Bar */}
+          <div className="px-6 py-4 bg-[#141E1A] flex flex-wrap items-center justify-between gap-4 border-b border-[#232E27]">
             <div className="flex items-center space-x-2">
               <button
-                onClick={() => setActiveTab("workflow")}
-                className={`px-3 py-1.5 font-mono-tag text-[12px] font-bold border transition-all ${
-                  activeTab === "workflow"
-                    ? "bg-[#068241] text-white border-[#068241]"
-                    : "bg-[#252524] text-[#AAA] border-transparent hover:text-white"
+                onClick={() => setActiveTab("orchestration")}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === "orchestration"
+                    ? "bg-[#068241] text-white"
+                    : "text-[#8E9690] hover:text-white"
                 }`}
               >
-                01. Agentic SDLC Runtime
+                Orchestrator SDK
               </button>
-
               <button
                 onClick={() => setActiveTab("mcp")}
-                className={`px-3 py-1.5 font-mono-tag text-[12px] font-bold border transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === "mcp"
-                    ? "bg-[#068241] text-white border-[#068241]"
-                    : "bg-[#252524] text-[#AAA] border-transparent hover:text-white"
+                    ? "bg-[#068241] text-white"
+                    : "text-[#8E9690] hover:text-white"
                 }`}
               >
-                02. Model Context Protocol (MCP)
+                MCP Schema
               </button>
-
               <button
-                onClick={() => setActiveTab("agent")}
-                className={`px-3 py-1.5 font-mono-tag text-[12px] font-bold border transition-all ${
-                  activeTab === "agent"
-                    ? "bg-[#068241] text-white border-[#068241]"
-                    : "bg-[#252524] text-[#AAA] border-transparent hover:text-white"
+                onClick={() => setActiveTab("process")}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === "process"
+                    ? "bg-[#068241] text-white"
+                    : "text-[#8E9690] hover:text-white"
                 }`}
               >
-                03. Process Optimization DAG
+                Process Mining
               </button>
             </div>
 
-            {/* Actions */}
             <div className="flex items-center space-x-3">
-              <span className="font-mono-tag text-[11px] text-[#888] hidden sm:inline">
+              <span className="text-xs text-[#8E9690] font-mono hidden sm:inline">
                 {current.filename}
               </span>
               <button
                 onClick={handleCopy}
-                className="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-[#2B2B2A] hover:bg-[#383837] text-white border border-[#444] font-mono-tag text-[11px] transition-colors"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#232E27] text-white text-xs hover:bg-[#2C3B32] transition-colors"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-[#00FFD5]" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copied ? "COPIED" : "COPY CODE"}</span>
+                {copied ? <Check className="w-3.5 h-3.5 text-[#068241]" /> : <Copy className="w-3.5 h-3.5" />}
+                <span>{copied ? "Copied" : "Copy"}</span>
               </button>
             </div>
           </div>
 
-          {/* Subheader info bar */}
-          <div className="bg-[#171716] px-4 py-2 border-b border-[#2A2A29] flex items-center justify-between font-mono-tag text-[11.5px] text-[#A0A09B]">
-            <div className="flex items-center space-x-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#068241]"></span>
-              <span>ARTIFACT: {current.title}</span>
-            </div>
-            <span className="text-[#068241] font-bold bg-[#068241]/20 px-2 py-0.5 rounded">ENV: ENTERPRISE RUNTIME</span>
-          </div>
-
           {/* Code Viewer */}
-          <div className="p-4 sm:p-6 overflow-x-auto text-[13px] sm:text-[14px] font-mono leading-relaxed bg-[#121211]">
-            <pre className="text-[#EDEDED]">
+          <div className="p-6 sm:p-8 overflow-x-auto text-sm sm:text-base font-mono leading-relaxed">
+            <pre className="text-[#E2DDD3]">
               <code>{current.code}</code>
             </pre>
           </div>
-
-          {/* Bottom terminal bar */}
-          <div className="bg-[#1C1C1B] px-4 py-3 border-t border-[#333] flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono-tag text-[11px] text-[#888]">
-            <div className="flex items-center space-x-2">
-              <span className="text-[#00FFD5]">SECURITY GATES:</span>
-              <span className="text-white">Strict PII Masking &bull; Human-in-the-Loop Safeguards</span>
-            </div>
-            <div>
-              <span>PACKAGE: </span>
-              <span className="text-[#068241] font-bold">@finclusive/agent-core@latest</span>
-              <span className="ml-3 text-[#AAA]">TypeScript / Python Runtime</span>
-            </div>
-          </div>
         </div>
-
       </div>
     </section>
   );

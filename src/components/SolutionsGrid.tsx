@@ -1,97 +1,93 @@
 "use client";
 
-import React, { useState } from "react";
-import { CORE_CAPABILITIES } from "@/lib/constants";
-import { ArrowUpRight, Bot, Cpu, Layers, Workflow, ShieldCheck } from "lucide-react";
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
+
+const ACCELERATORS = [
+  {
+    title: "Autonomous SDLC Orchestration",
+    subhead: "Transform requirements into verified code",
+    description: "An intelligent engineering studio that maintains persistent context over digital banking assets, architecture blueprints, and regulatory bounds. It takes business requirement documents (BRDs) and wireframes to generate complete user stories, production code diffs, and automated UAT plans.",
+    provenance: "Inspired by Viom Studio principles",
+    metric: "Eliminates weeks of back-and-forth documentation handoffs"
+  },
+  {
+    title: "Enterprise Process Mining & Discovery",
+    subhead: "Uncover real operational workflows from telemetry",
+    description: "Instead of relying on outdated manual process diagrams, our AI process discovery engine continuously analyzes core banking event streams and system logs to reconstruct actual operational workflows, identify latency bottlenecks, and synthesize automated execution DAGs.",
+    provenance: "Event Mesh Process Intelligence",
+    metric: "Identifies systemic friction and exception paths automatically"
+  },
+  {
+    title: "Self-Healing Test & Regression Engine",
+    subhead: "Continuous quality shifted completely left",
+    description: "Autonomous regression platform driven by natural language and user journey telemetry. Generates, maintains, and automatically updates end-to-end test suites across digital channels, ensuring zero breaking changes slip into production releases.",
+    provenance: "Autonomous Quality Guard",
+    metric: "Tests adapt seamlessly when user interfaces evolve"
+  },
+  {
+    title: "Model Context Protocol Tool Gateway",
+    subhead: "Zero-trust bindings for sensitive enterprise data",
+    description: "A secure, observable MCP gateway that allows enterprise LLM agents to safely interact with core banking ledgers, KYC registries, and internal databases without exposing credentials, leaking PII, or risking unauthorized execution.",
+    provenance: "Enterprise Governance Layer",
+    metric: "Enforces mandatory human confirmation for high-stakes writes"
+  }
+];
 
 export function SolutionsGrid() {
-  const [activeCard, setActiveCard] = useState<string>("01");
-
   return (
-    <section id="solutions" className="py-16 sm:py-24 border-b-[1.5px] border-[#121211] bg-[#FAF8F5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b-[1.5px] border-[#121211]">
-          <div>
-            <div className="flex items-center space-x-2 font-mono-tag text-[12px] text-[#068241] font-bold uppercase tracking-wider mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-              <span>[02 // AGENTIC AI ACCELERATOR MODULES]</span>
-            </div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl font-normal text-[#121211]">
-              Architected for enterprise intelligence &amp; autonomous engineering.
-            </h2>
-          </div>
-          <p className="mt-4 md:mt-0 text-[14.5px] text-[#55534E] max-w-md">
-            Four specialized agentic frameworks inspired by modern Center-of-Intelligence architectures, replacing manual enterprise friction with autonomous precision.
-          </p>
-        </div>
+    <section id="accelerators" className="py-24 sm:py-32 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+      {/* Section Header */}
+      <div className="max-w-3xl">
+        <h2 className="fluid-heading text-[#141715]">
+          Four enterprise AI accelerators designed for resilience.
+        </h2>
+        <p className="mt-4 text-lg text-[#575E59] leading-relaxed">
+          Engineered to optimize costs, streamline software delivery, and fuel modernization across core institutional infrastructure.
+        </p>
+      </div>
 
-        {/* 4 Architectural Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {CORE_CAPABILITIES.map((cap) => {
-            const isFocal = activeCard === cap.id;
-            return (
-              <div
-                key={cap.id}
-                onMouseEnter={() => setActiveCard(cap.id)}
-                className={`p-6 sm:p-8 bg-white border-[1.5px] border-[#121211] transition-all relative ${
-                  isFocal
-                    ? "shadow-[5px_5px_0px_#068241] ring-1 ring-[#068241]"
-                    : "shadow-[3px_3px_0px_#121211]"
-                }`}
-              >
-                {/* Top status bar */}
-                <div className="flex items-center justify-between pb-4 border-b border-[#DCD8CF]">
-                  <div className="flex items-center space-x-2 font-mono-tag text-[11px]">
-                    <span className="font-bold text-[#068241]">[{cap.id}]</span>
-                    <span className="text-[#8E8B82]">//</span>
-                    <span className="font-semibold text-[#121211]">{cap.code}</span>
-                  </div>
-
-                  <span className="px-2.5 py-0.5 font-mono-tag text-[10.5px] font-bold bg-[#E6F8EE] text-[#068241] border border-[#8CE0B0]">
-                    {cap.tag}
-                  </span>
-                </div>
-
-                {/* Title & Summary */}
-                <h3 className="font-serif-display text-2xl sm:text-3xl font-normal text-[#121211] mt-5 mb-2.5">
-                  {cap.title}
+      {/* Editorial Stacked Panels (No 3-column AI slop card grids) */}
+      <div className="mt-16 space-y-8">
+        {ACCELERATORS.map((item, idx) => (
+          <div
+            key={idx}
+            className="p-8 sm:p-12 rounded-2xl bg-white border border-[#EAE6DF] soft-elevation transition-all"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-5">
+                <span className="text-[12px] font-medium text-[#068241] uppercase tracking-wider">
+                  {item.provenance}
+                </span>
+                <h3 className="fluid-subheading text-[#141715] mt-2 font-normal">
+                  {item.title}
                 </h3>
-                <p className="text-[14.5px] text-[#55534E] leading-relaxed mb-6">
-                  {cap.summary}
+                <p className="text-base text-[#575E59] mt-2 font-normal">
+                  {item.subhead}
+                </p>
+              </div>
+
+              <div className="lg:col-span-7 flex flex-col justify-between h-full">
+                <p className="text-[16px] text-[#575E59] leading-relaxed font-light">
+                  {item.description}
                 </p>
 
-                {/* Technical Bullet Items */}
-                <div className="space-y-2.5 pt-4 border-t border-[#DCD8CF]">
-                  {cap.details.map((detail, idx) => (
-                    <div key={idx} className="flex items-start space-x-2.5 text-[13.5px] text-[#121211]">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#068241] mt-2 shrink-0"></div>
-                      <span className="leading-snug">{detail}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Footer tag */}
-                <div className="mt-6 pt-4 border-t border-[#DCD8CF] flex items-center justify-between">
-                  <span className="font-mono-tag text-[11px] text-[#068241] flex items-center space-x-1.5 font-bold">
-                    <span className="w-2 h-2 rounded-full bg-[#068241]"></span>
-                    <span>{cap.status}</span>
+                <div className="mt-6 pt-6 border-t border-[#F2EFE9] flex flex-wrap items-center justify-between gap-4">
+                  <span className="text-[14px] text-[#141715] font-medium">
+                    {item.metric}
                   </span>
-
                   <a
                     href="#contact"
-                    className="font-mono-tag text-[12px] text-[#068241] hover:text-[#056e37] font-bold inline-flex items-center space-x-1"
+                    className="inline-flex items-center space-x-1.5 text-[14px] font-medium text-[#068241] hover:text-[#056B35]"
                   >
-                    <span>EXPLORE ACCELERATOR SPEC</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#068241]" />
+                    <span>Request Technical Blueprint</span>
+                    <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
-            );
-          })}
-        </div>
-
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

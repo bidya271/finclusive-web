@@ -1,134 +1,96 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --paper: #FAF8F5;
-    --paper-card: #FFFFFF;
-    --paper-sub: #F3EFE6;
-    --ink: #121211;
-    --ink-muted: #55534E;
-    --ink-faint: #8E8B82;
-    --rule: #DCD8CF;
-    --rule-dark: #121211;
-    
-    /* RemitPe Brand Identity Tokens */
-    --brand-purple: #5033A4;
-    --brand-purple-dark: #3F2684;
-    --brand-purple-light: #F4F0FF;
-    --brand-purple-border: #D8CEF8;
-    
-    /* High-vibrancy RemitPe Emerald Green */
-    --brand-green: #068241;
-    --brand-green-vibrant: #00A854;
-    --brand-green-tint: #E6F8EE;
-    --brand-green-border: #8CE0B0;
-    
-    --brand-gold: #D97706;
-    --brand-gold-tint: #FEF3C7;
-  }
+:root {
+  --bg-page: #FAF8F5;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #F2EFE9;
+  --bg-dark: #0D1411;
+  --text-main: #141715;
+  --text-muted: #575E59;
+  --text-faint: #8E9690;
+  
+  /* Brand Tokens (RemitPe Emerald & Deep Purple) */
+  --brand-green: #068241;
+  --brand-green-hover: #056B35;
+  --brand-green-subtle: #E8F5EE;
+  --brand-purple: #5033A4;
+  --brand-purple-subtle: #F3EFFE;
 }
 
-body {
-  background-color: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+html {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle Architectural Dot Canvas */
-.canvas-grid {
-  background-image: radial-gradient(#CFCBC0 1.2px, transparent 1.2px);
-  background-size: 24px 24px;
+/* Lenis Smooth Scroll Recommended Styles */
+html.lenis, html.lenis body {
+  height: auto;
 }
 
-/* Hard Brutalist Elevation Shadows */
-.brutalist-card {
-  border: 1.5px solid var(--rule-dark);
-  box-shadow: 4px 4px 0px var(--rule-dark);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-.brutalist-card:hover {
-  transform: translate(-1.5px, -1.5px);
-  box-shadow: 5.5px 5.5px 0px var(--rule-dark);
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
-.brutalist-card-purple {
-  border: 1.5px solid var(--rule-dark);
-  box-shadow: 4px 4px 0px var(--brand-purple);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
-.brutalist-card-purple:hover {
-  transform: translate(-1.5px, -1.5px);
-  box-shadow: 6px 6px 0px var(--brand-purple);
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
-.brutalist-card-green {
-  border: 1.5px solid var(--rule-dark);
-  box-shadow: 4px 4px 0px #068241;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+/* Fluid display headlines */
+.fluid-display {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(2.8rem, 7.5vw, 6.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 400;
 }
 
-.brutalist-card-green:hover {
-  transform: translate(-1.5px, -1.5px);
-  box-shadow: 6px 6px 0px #068241;
+.fluid-heading {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 400;
 }
 
-.brutalist-button {
-  border: 1.5px solid var(--rule-dark);
-  box-shadow: 3px 3px 0px var(--rule-dark);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+.fluid-subheading {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.brutalist-button:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0px var(--rule-dark);
+/* Organic Soft Shadows (Only on interactive elevated components) */
+.soft-elevation {
+  box-shadow: 0 20px 40px -15px rgba(20, 23, 21, 0.05), 0 0 1px rgba(20, 23, 21, 0.1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.brutalist-button:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px var(--rule-dark);
+.soft-elevation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 28px 50px -20px rgba(6, 130, 65, 0.12), 0 0 1px rgba(20, 23, 21, 0.15);
 }
 
-.brutalist-button-green {
-  border: 1.5px solid var(--rule-dark);
-  background-color: #068241;
-  color: #ffffff;
-  box-shadow: 3px 3px 0px var(--rule-dark);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
-
-.brutalist-button-green:hover {
-  background-color: #056e37;
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0px var(--rule-dark);
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
 }
-
-.brutalist-button-green:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px var(--rule-dark);
+::-webkit-scrollbar-thumb {
+  background: #D8D4CC;
+  border-radius: 4px;
 }
-
-/* Monospace font helpers */
-.font-mono-tag {
-  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-
-.font-serif-display {
-  font-family: var(--font-instrument-serif), Georgia, Cambria, "Times New Roman", serif;
-}
-
-/* Code scrollbar styling */
-pre::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
-}
-pre::-webkit-scrollbar-track {
-  background: #1e1e1e;
-}
-pre::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 3px;
+::-webkit-scrollbar-thumb:hover {
+  background: #B6B0A4;
 }
